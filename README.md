@@ -5,5 +5,4 @@ To intall, as described in [Cockpit docs](https://cockpit-project.org/blog/creat
 
 screenshots:
 ![PC_web](https://github.com/MRsagi/cockpit-temperature-plugin/blob/master/screenshots/PC_web.png?raw=true)
-![Android_web](https://github.com/MRsagi/cockpit-temperature-plugin/blob/master/screenshots/Android_web.png?raw=true)
 
