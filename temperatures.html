@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Temperature</title>
+    <meta charset="utf-8">
+    <link href="../base1/cockpit.css" type="text/css" rel="stylesheet">
+    <script src="../base1/jquery.js"></script>
+    <script src="../base1/cockpit.js"></script>
+
+    <script type="text/javascript" src="smoothie.js"></script>
+    <script type="text/javascript" src="temperatures.js"></script>
+    <style>
+        body {
+            background-color: #4f5255
+        }
+
+        tr {
+            font-size: 16pt
+        }
+    </style>
+</head>
+
+<body onresize="resize_canvas()">
+    <div align=center>
+        <table id="table" style="width:100%;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+            <tr>
+                <th style="font-size:24pt; color:#ffffff; text-align:center">Temperatures [°C]</th>
+            </tr>
+            <tr>
+                <td style="white-space:nowrap; text-align:right;">
+                    Boot Drive:
+                    <div id="hdd_dev_nvme0n1_temp" style="display:inline-block; color:#ff0000;">?</div>
+                    |
+                    RAID Drive 1:
+                    <div id="hdd_dev_nvme1n1_temp" style="display:inline-block; color:#00ffff;">?</div>
+                    |
+                    RAID Drive 2:
+                    <div id="hdd_dev_nvme2n1_temp" style="display:inline-block; color:#ffff00;">?</div>
+                    |
+                    RAID Drive 3:
+                    <div id="hdd_dev_nvme3n1_temp" style="display:inline-block; color:#f000f0;">?</div>
+                    |
+                    RAID Drive 4:
+                    <div id="hdd_dev_nvme4n1_temp" style="display:inline-block; color:#00ff00;">?</div>
+
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center;width:100%">
+                    <canvas id="temps" height="300"></canvas>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
