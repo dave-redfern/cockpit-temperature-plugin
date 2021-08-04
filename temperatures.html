@@ -5,21 +5,19 @@
     <meta charset="utf-8">
     <link href="../base1/cockpit.css" type="text/css" rel="stylesheet">
     <link href="cockpit.css" type="text/css" rel="stylesheet">
+    <link href="temperatures.css" type="text/css" rel="stylesheet">
     <script src="../base1/jquery.js"></script>
     <script src="../base1/cockpit.js"></script>
 
     <script type="text/javascript" src="smoothie.js"></script>
     <script type="text/javascript" src="temperatures.js"></script>
-    <style>
-        .pf-c-body { font-size: var(--pf-global--FontSize--md); }
-    </style>
 </head>
 <body class="pf-m-redhat-font">
     <div class="ct-page-fill" id="app">
         <div class="pf-c-page">
             <main class="pf-c-page__main" tabindex="-1">
                 <section class="pf-c-page__main-section pf-m-light">
-                    <div class=""><h1>Temperatures °C</h1></div>
+                    <h1>Temperatures °C</h1>
                 </section>
                 <section class="pf-c-page__main-section">
                     <div class="pf-c-card">
@@ -28,24 +26,24 @@
                             <tr>
                                 <td class="text-right">
                                     Boot:
-                                    <div id="hdd_dev_nvme0n1_temp" style="display:inline-block; color:#ff0000;">?</div>
+                                    <div class="temp-display fg-col-1" id="hdd_dev_nvme0n1_temp">?</div>
                                     |
                                     RAID 1:
-                                    <div id="hdd_dev_nvme1n1_temp" style="display:inline-block; color:#00ffff;">?</div>
+                                    <div class="temp-display fg-col-2" id="hdd_dev_nvme1n1_temp">?</div>
                                     |
                                     RAID 2:
-                                    <div id="hdd_dev_nvme2n1_temp" style="display:inline-block; color:#ffff00;">?</div>
+                                    <div class="temp-display fg-col-3" id="hdd_dev_nvme2n1_temp">?</div>
                                     |
                                     RAID 3:
-                                    <div id="hdd_dev_nvme3n1_temp" style="display:inline-block; color:#f000f0;">?</div>
+                                    <div class="temp-display fg-col-4" id="hdd_dev_nvme3n1_temp">?</div>
                                     |
                                     RAID 4:
-                                    <div id="hdd_dev_nvme4n1_temp" style="display:inline-block; color:#00ff00;">?</div>
+                                    <div class="temp-display fg-col-5" id="hdd_dev_nvme4n1_temp">?</div>
 
                                 </td>
                             </tr>
                             <tr>
-                                <td style="text-align:center;width:100%">
+                                <td class="text-center">
                                     <canvas id="temps" height="300"></canvas>
                                 </td>
                             </tr>

@@ -1,0 +1,12 @@
+
+.pf-c-body { font-size: var(--pf-global--FontSize--md); }
+.temp-display { display: inline-block; border: 1px solid #000; padding: 0 3px; background-color: #000; }
+
+.fg-col-1 { color:#ff0000; }
+.fg-col-2 { color:#00ffff; }
+.fg-col-3 { color:#ffff00; }
+.fg-col-4 { color:#ff00ff; }
+.fg-col-5 { color: #00ff00; }
+.fg-col-6 { color: #99ccff; }
+.fg-col-7 { color: #cc99ff; }
+.fg-col-8 { color: #ffccff; }
