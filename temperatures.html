@@ -1,54 +1,76 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-
 <head>
-    <title>Temperature</title>
+    <title>Pinger</title>
     <meta charset="utf-8">
     <link href="../base1/cockpit.css" type="text/css" rel="stylesheet">
+    <link href="cockpit.css" type="text/css" rel="stylesheet">
     <script src="../base1/jquery.js"></script>
     <script src="../base1/cockpit.js"></script>
 
     <script type="text/javascript" src="smoothie.js"></script>
     <script type="text/javascript" src="temperatures.js"></script>
     <style>
-        tr {
-            font-size: 16pt
-        }
+        .pf-c-body { font-size: var(--pf-global--FontSize--md); }
     </style>
 </head>
+<body class="pf-m-redhat-font">
+    <div class="ct-page-fill" id="app">
+        <div class="pf-c-page">
+            <main class="pf-c-page__main" tabindex="-1">
+                <section class="pf-c-page__main-section pf-m-light">
+                    <div class=""><h1>Temperatures °C</h1></div>
+                </section>
+                <section class="pf-c-page__main-section">
+                    <div class="pf-c-card">
+                        <div class="pf-c-card__header"><h3>Drives</h3></div>
+                        <table class="table pf-c-body table-condensed">
+                            <tr>
+                                <td class="text-right">
+                                    Boot:
+                                    <div id="hdd_dev_nvme0n1_temp" style="display:inline-block; color:#ff0000;">?</div>
+                                    |
+                                    RAID 1:
+                                    <div id="hdd_dev_nvme1n1_temp" style="display:inline-block; color:#00ffff;">?</div>
+                                    |
+                                    RAID 2:
+                                    <div id="hdd_dev_nvme2n1_temp" style="display:inline-block; color:#ffff00;">?</div>
+                                    |
+                                    RAID 3:
+                                    <div id="hdd_dev_nvme3n1_temp" style="display:inline-block; color:#f000f0;">?</div>
+                                    |
+                                    RAID 4:
+                                    <div id="hdd_dev_nvme4n1_temp" style="display:inline-block; color:#00ff00;">?</div>
 
-<body onresize="resize_canvas()">
-    <div align=center>
-        <table id="table" style="width:100%;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
-            <tr>
-                <th style="font-size:18pt; text-align: left;">Drive Temperatures [°C]</th>
-            </tr>
-            <tr>
-                <td style="white-space:nowrap; text-align:right;">
-                    Boot Drive:
-                    <div id="hdd_dev_nvme0n1_temp" style="display:inline-block; color:#ff0000;">?</div>
-                    |
-                    RAID Drive 1:
-                    <div id="hdd_dev_nvme1n1_temp" style="display:inline-block; color:#00ffff;">?</div>
-                    |
-                    RAID Drive 2:
-                    <div id="hdd_dev_nvme2n1_temp" style="display:inline-block; color:#ffff00;">?</div>
-                    |
-                    RAID Drive 3:
-                    <div id="hdd_dev_nvme3n1_temp" style="display:inline-block; color:#f000f0;">?</div>
-                    |
-                    RAID Drive 4:
-                    <div id="hdd_dev_nvme4n1_temp" style="display:inline-block; color:#00ff00;">?</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;width:100%">
+                                    <canvas id="temps" height="300"></canvas>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+<!--                    <div class="pf-c-card">-->
+<!--                        <div class="pf-c-card__header"><h3>CPUs</h3></div>-->
+<!--                        <table class="table">-->
+<!--                            <tr>-->
+<!--                                <td style="white-space:nowrap; text-align:right;">-->
+<!--                                    <div id="cpu_0_temp" style="display:inline-block; color:#ff0000;">?</div>-->
+<!--                                    |-->
 
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:center;width:100%">
-                    <canvas id="temps" height="300"></canvas>
-                </td>
-            </tr>
-        </table>
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td style="text-align:center;width:100%">-->
+<!--                                    <canvas id="temps" height="300"></canvas>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                        </table>-->
+<!--                    </div>-->
+                </section>
+            </main>
+        </div>
     </div>
 </body>
-
 </html>

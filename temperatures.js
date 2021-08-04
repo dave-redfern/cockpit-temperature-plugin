@@ -1,7 +1,7 @@
 window.onload = function () {
     resize_canvas()
 
-    var chart = new SmoothieChart({
+    let chart = new SmoothieChart({
             millisPerPixel: 80,
             maxValueScale: 1.1,
             minValueScale: 1.1,
@@ -21,7 +21,7 @@ window.onload = function () {
     chart.streamTo(canvas, 500);
 
     function get_cpu_temp(series, core) {
-        var proc = cockpit.script("sensors | grep 'Core " + core + ":' | awk '{print $3}'");
+        let proc = cockpit.script("sensors | grep 'Core " + core + ":' | awk '{print $3}'");
         proc.done(function (data) {
             pt = parseFloat(data.match(/([0-9\.]+)/)[1]);
             series.append(new Date().getTime(), pt);
@@ -30,11 +30,11 @@ window.onload = function () {
     };
 
     function get_hdd_temp(series, drive) {
-        var hdd = cockpit.script("hddtemp -n " + drive);
+        let hdd = cockpit.script("hddtemp -n " + drive);
         hdd.done(function (data) {
-            pt = parseFloat(data);
+            let pt = parseFloat(data);
             series.append(new Date().getTime(), pt);
-            document.getElementById("hdd" + drive.replace('/', '_') + "_temp").innerHTML = pt;
+            document.getElementById("hdd" + drive.replace(/\//g, '_') + "_temp").innerHTML = pt;
         });
     };
 
