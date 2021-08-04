@@ -34,7 +34,7 @@ window.onload = function () {
         hdd.done(function (data) {
             pt = parseFloat(data);
             series.append(new Date().getTime(), pt);
-            document.getElementById("hdd_" + drive.replace('/', '_') + "_temp").innerHTML = pt;
+            document.getElementById("hdd" + drive.replace('/', '_') + "_temp").innerHTML = pt;
         });
     };
 
@@ -44,7 +44,7 @@ window.onload = function () {
         get_hdd_temp(seriesData[2], '/dev/nvme2n1')
         get_hdd_temp(seriesData[3], '/dev/nvme3n1')
         get_hdd_temp(seriesData[4], '/dev/nvme4n1')
-    }, 1000);
+    }, 2000);
 }
 
 function resize_canvas() {
