@@ -18,11 +18,11 @@ window.onload = function () {
     chart.addTimeSeries(seriesData[2], {lineWidth: 2, strokeStyle: '#ffff00'});
     chart.addTimeSeries(seriesData[3], {lineWidth: 2, strokeStyle: '#f000f0'});
     chart.addTimeSeries(seriesData[4], {lineWidth: 2, strokeStyle: '#00ff00'});
-    chart.addTimeSeries(seriesData[5], {lineWidth: 2, strokeStyle: '#0000FF'});
+    chart.addTimeSeries(seriesData[5], {lineWidth: 2, strokeStyle: '#99ccff'});
     chart.streamTo(canvas, 500);
 
     function get_cpu_temp(series) {
-        let proc = cockpit.script("sensors k10temp-pci-00c3 | grep \"Tctl:\" | grep -oP \"([\d.]+)\" | xargs");
+        let proc = cockpit.script("sensors k10temp-pci-00c3 | grep \"Tctl:\"");
         proc.done(function (data) {
             pt = parseFloat(data.match(/([0-9.]+)/)[1]);
             series.append(new Date().getTime(), pt);
